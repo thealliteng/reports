@@ -31,7 +31,7 @@ body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;b
 </div>
 <div class="tabs">
   <div class="tab on" onclick="switchTab('daily',this)">📅 일간<span style="font-size:10px;display:block;font-weight:400;color:#9CA3AF">1건</span></div>
-  <div class="tab" onclick="switchTab('weekly',this)">📆 주간<span style="font-size:10px;display:block;font-weight:400;color:#9CA3AF">0건</span></div>
+  <div class="tab" onclick="switchTab('weekly',this)">📆 주간<span style="font-size:10px;display:block;font-weight:400;color:#9CA3AF">1건</span></div>
   <div class="tab" onclick="switchTab('quarter',this)">📊 분기<span style="font-size:10px;display:block;font-weight:400;color:#9CA3AF">0건</span></div>
 </div>
 <div id="panel-daily" class="panel on">
@@ -50,7 +50,19 @@ body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;b
     </a>
 </div>
 <div id="panel-weekly" class="panel">
-  <div class="empty"><div>📆</div>주간 보고서가 없습니다</div>
+  
+    <a href="https://thealliteng.github.io/reports/%EA%B9%80%EB%AF%BC%EC%A4%80/2026-05-18_주간.html" target="_blank"
+      style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;background:#fff;border:1px solid #E5E7EB;border-radius:10px;margin-bottom:7px;text-decoration:none;color:#1F2937;transition:border-color .15s"
+      onmouseover="this.style.borderColor='#93C5FD'" onmouseout="this.style.borderColor='#E5E7EB'">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="font-size:18px">📆</span>
+        <div>
+          <div style="font-size:13px;font-weight:600">2026-05-18 주간 보고서</div>
+          <div style="font-size:11px;color:#9CA3AF;margin-top:1px">2026-05-18</div>
+        </div>
+      </div>
+      <span style="font-size:12px;color:#3B82F6;font-weight:500">열람 →</span>
+    </a>
 </div>
 <div id="panel-quarter" class="panel">
   <div class="empty"><div>📊</div>분기 보고서가 없습니다</div>
