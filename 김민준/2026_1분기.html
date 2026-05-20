@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>더올릿영어 | 김민준 2026년 1분기 보고서</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#F8FAFC;color:#1F2937;font-size:14px;line-height:1.6}
+.hdr{background:linear-gradient(135deg,#1E3A8A,#1D4ED8);color:#fff;padding:20px 18px 16px}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:6px;padding:3px 10px;font-size:11px}
+.tag-w{background:rgba(255,255,255,0.22);font-weight:700}
+.hdr-name{font-size:22px;font-weight:800}
+.hdr-name span{font-size:13px;font-weight:400;opacity:.7;margin-left:7px}
+.hdr-date{font-size:11px;opacity:.5;margin-top:3px}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-bottom:1px solid #E5E7EB}
+.ss{text-align:center;padding:13px 6px}.ss:not(:last-child){border-right:1px solid #E5E7EB}
+.sv{font-size:22px;font-weight:800;display:block}.sl{font-size:10px;color:#9CA3AF;font-weight:600;margin-top:2px}
+.sv.hi{color:#16A34A}.sv.md{color:#2563EB}.sv.lo{color:#DC2626}.sv.na{color:#9CA3AF}
+.wrap{max-width:600px;margin:0 auto;padding:16px 14px 40px}
+.sec{margin-bottom:16px}
+.sec-t{font-size:10px;font-weight:700;color:#9CA3AF;letter-spacing:.9px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.sec-t::after{content:'';flex:1;height:1px;background:#E5E7EB}
+.card{background:#fff;border-radius:12px;border:1px solid #E5E7EB;padding:16px 18px}
+.ch{position:relative;height:200px}
+.hm{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.hmb{text-align:center}
+.hmv{font-size:13px;font-weight:700;display:block}
+.hml{font-size:10px;color:#9CA3AF}
+.hmv.hi{color:#16A34A}.hmv.md{color:#2563EB}.hmv.lo{color:#DC2626}.hmv.na{color:#9CA3AF}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1F2937;color:#fff;padding:9px 18px;border-radius:20px;font-size:12px;font-weight:600;opacity:0;transition:opacity .25s;z-index:200;pointer-events:none}
+.toast.show{opacity:1}
+.copy-btn{background:#F9FAFB;color:#374151;border:1px solid #E5E7EB;border-radius:9px;padding:8px 13px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="hdr-top">
+    <div style="display:flex;gap:7px;flex-wrap:wrap">
+      <span class="tag">더올릿영어학원</span>
+      <span class="tag tag-w">📊 2026년 1분기</span>
+      <span class="tag">고2 A반</span>
+    </div>
+    <button class="copy-btn" onclick="copyLink()">🔗 링크 복사</button>
+  </div>
+  <div class="hdr-name">김민준<span>고2</span></div>
+  <div class="hdr-date">2026년 1월 — 3월 학습 보고서</div>
+</div>
+<div class="strip">
+  <div class="ss"><span class="sv lo">0%</span><span class="sl">분기 출석률</span></div>
+  <div class="ss"><span class="sv na">-</span><span class="sl">단어 평균</span></div>
+  <div class="ss"><span class="sv md">2/5</span><span class="sl">학습 태도</span></div>
+</div>
+<div class="wrap">
+  
+  <div class="sec">
+    <div class="sec-t">📅 월별 단어 평균</div>
+    <div class="card">
+      <div class="hm">
+        <div class="hmb" style="flex:1;padding:10px;background:#F9FAFB;border-radius:8px;text-align:center">
+          <span class="hmv na">-</span>
+          <span class="hml">1월</span>
+        </div><div class="hmb" style="flex:1;padding:10px;background:#F9FAFB;border-radius:8px;text-align:center">
+          <span class="hmv na">-</span>
+          <span class="hml">2월</span>
+        </div><div class="hmb" style="flex:1;padding:10px;background:#F9FAFB;border-radius:8px;text-align:center">
+          <span class="hmv na">-</span>
+          <span class="hml">3월</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div style="text-align:center;margin-top:24px;font-size:11px;color:#9CA3AF">더올릿영어학원 · 학습 보고서 시스템</div>
+</div>
+<div class="toast" id="toast">링크가 복사되었습니다</div>
+<script>
+function copyLink(){const url='https://thealliteng.github.io/reports/%EA%B9%80%EB%AF%BC%EC%A4%80_2026_1분기.html';navigator.clipboard.writeText(url).then(()=>{const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000);});}
+
+</script>
+</body></html>
