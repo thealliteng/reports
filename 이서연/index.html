@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>더올릿영어 | 이서연 학습 보고서</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#F8FAFC;color:#1F2937;font-size:14px}
+.hdr{background:linear-gradient(135deg,#1E3A8A,#1D4ED8);color:#fff;padding:24px 18px 20px}
+.tag{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.25);border-radius:6px;padding:3px 10px;font-size:11px;display:inline-block;margin-bottom:12px}
+.name{font-size:26px;font-weight:800}
+.name span{font-size:13px;font-weight:400;opacity:.6;margin-left:8px}
+.sub{font-size:12px;opacity:.5;margin-top:4px}
+.tabs{display:flex;background:#fff;border-bottom:2px solid #E5E7EB;position:sticky;top:0;z-index:10}
+.tab{flex:1;padding:14px 8px;text-align:center;font-size:13px;font-weight:600;color:#9CA3AF;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .15s}
+.tab.on{color:#1D4ED8;border-bottom-color:#1D4ED8}
+.panel{display:none;padding:16px 14px 40px;max-width:600px;margin:0 auto}
+.panel.on{display:block}
+.empty{text-align:center;padding:40px 20px;color:#9CA3AF;font-size:13px}
+.empty div{font-size:32px;margin-bottom:10px}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1F2937;color:#fff;padding:9px 18px;border-radius:20px;font-size:12px;font-weight:600;opacity:0;transition:opacity .25s;pointer-events:none}
+.toast.show{opacity:1}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="tag">더올릿영어학원 학습 보고서</div>
+  <div class="name">이서연<span>고2 · 고2 A반</span></div>
+  <div class="sub">보고서를 탭으로 선택해서 열람하세요</div>
+</div>
+<div class="tabs">
+  <div class="tab on" onclick="switchTab('daily',this)">📅 일간<span style="font-size:10px;display:block;font-weight:400;color:#9CA3AF">1건</span></div>
+  <div class="tab" onclick="switchTab('weekly',this)">📆 주간<span style="font-size:10px;display:block;font-weight:400;color:#9CA3AF">0건</span></div>
+  <div class="tab" onclick="switchTab('quarter',this)">📊 분기<span style="font-size:10px;display:block;font-weight:400;color:#9CA3AF">0건</span></div>
+</div>
+<div id="panel-daily" class="panel on">
+  
+    <a href="https://thealliteng.github.io/reports/%EC%9D%B4%EC%84%9C%EC%97%B0/2026-05-20_일간.html" target="_blank"
+      style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;background:#fff;border:1px solid #E5E7EB;border-radius:10px;margin-bottom:7px;text-decoration:none;color:#1F2937;transition:border-color .15s"
+      onmouseover="this.style.borderColor='#93C5FD'" onmouseout="this.style.borderColor='#E5E7EB'">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="font-size:18px">📅</span>
+        <div>
+          <div style="font-size:13px;font-weight:600">2026-05-20 일간 보고서</div>
+          <div style="font-size:11px;color:#9CA3AF;margin-top:1px">2026-05-20</div>
+        </div>
+      </div>
+      <span style="font-size:12px;color:#3B82F6;font-weight:500">열람 →</span>
+    </a>
+</div>
+<div id="panel-weekly" class="panel">
+  <div class="empty"><div>📆</div>주간 보고서가 없습니다</div>
+</div>
+<div id="panel-quarter" class="panel">
+  <div class="empty"><div>📊</div>분기 보고서가 없습니다</div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+function switchTab(id,btn){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('panel-'+id).classList.add('on');
+}
+</script>
+</body></html>
