@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>더올릿영어 | 정도윤 주간 보고서</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#F8FAFC;color:#1F2937;font-size:14px;line-height:1.6}
+.hdr{background:linear-gradient(135deg,#065F46,#047857);color:#fff;padding:20px 18px 16px}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:6px;padding:3px 10px;font-size:11px}
+.tag-w{background:rgba(255,255,255,0.22);font-weight:700}
+.hdr-name{font-size:22px;font-weight:800}
+.hdr-name span{font-size:13px;font-weight:400;opacity:.7;margin-left:7px}
+.hdr-date{font-size:11px;opacity:.5;margin-top:3px}
+.wrap{max-width:600px;margin:0 auto;padding:16px 14px 40px}
+.sec{margin-bottom:16px}
+.sec-t{font-size:10px;font-weight:700;color:#9CA3AF;letter-spacing:.9px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.sec-t::after{content:'';flex:1;height:1px;background:#E5E7EB}
+.card{background:#fff;border-radius:12px;border:1px solid #E5E7EB;padding:16px 18px}
+.strip{display:grid;background:#fff;border-bottom:1px solid #E5E7EB}
+.ss{text-align:center;padding:13px 6px}
+.ss:not(:last-child){border-right:1px solid #E5E7EB}
+.sv{font-size:20px;font-weight:800;display:block}
+.sl{font-size:10px;color:#9CA3AF;font-weight:600;margin-top:2px}
+.sv.hi{color:#16A34A}.sv.md{color:#2563EB}.sv.lo{color:#DC2626}.sv.na{color:#9CA3AF}
+.row{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid #F3F4F6}
+.row:last-child{border-bottom:none}
+.rl{font-size:13px;color:#6B7280}.rv{font-size:13px;font-weight:600}
+.day-row{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid #F9FAFB;font-size:12px}
+.day-row:last-child{border-bottom:none}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1F2937;color:#fff;padding:9px 18px;border-radius:20px;font-size:12px;font-weight:600;opacity:0;transition:opacity .25s;z-index:200;pointer-events:none}
+.toast.show{opacity:1}
+.copy-btn{background:#F9FAFB;color:#374151;border:1px solid #E5E7EB;border-radius:9px;padding:8px 13px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="hdr-top">
+    <div style="display:flex;gap:7px;flex-wrap:wrap">
+      <span class="tag">더올릿영어학원</span>
+      <span class="tag tag-w">📆 주간 보고서</span>
+      <span class="tag">고1 C반</span>
+    </div>
+    <button class="copy-btn" onclick="copyLink()">🔗 링크 복사</button>
+  </div>
+  <div class="hdr-name">정도윤<span>고1</span></div>
+  <div class="hdr-date">5월 18일 — 5월 24일</div>
+</div>
+<div class="strip" style="grid-template-columns:repeat(4,1fr)">
+  <div class="ss"><span class="sv hi">100%</span><span class="sl">출석률</span></div>
+  <div class="ss"><span class="sv na">-</span><span class="sl">단어평균</span></div>
+  <div class="ss"><span class="sv na">-</span><span class="sl">주간TEST</span></div>
+  
+  <div class="ss"><span class="sv md">4</span><span class="sl">태도평균</span></div>
+</div>
+<div class="wrap">
+  
+    <div class="sec">
+      <div class="sec-t">📚 이번 주 학습내용</div>
+      <div class="card">
+        <div class="row"><span class="rl">수</span><span class="rv" style="font-weight:400;color:#374151;text-align:right;font-size:12px">빈칸추론</span></div><div class="row"><span class="rl">목</span><span class="rv" style="font-weight:400;color:#374151;text-align:right;font-size:12px">수능 18회</span></div><div class="row"><span class="rl">금</span><span class="rv" style="font-weight:400;color:#374151;text-align:right;font-size:12px">수능특강18</span></div>
+      </div>
+    </div>
+    <div class="sec">
+      <div class="sec-t">📅 일별 기록</div>
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:6px;padding:8px 0;border-bottom:1px solid #F9FAFB;flex-wrap:wrap;font-size:12px">
+        <span style="width:20px;color:#6B7280;font-weight:600;flex-shrink:0">월</span>
+        <span style="font-weight:600;color:#16A34A;flex-shrink:0">O</span>
+        <span style="color:#D97706;flex-shrink:0">★★★★☆</span>
+        <span style="color:#6B7280">정규:<strong style="color:#DC2626">안함</strong></span>
+        <span style="color:#6B7280">자립:<strong style="color:#DC2626">안함</strong></span>
+      </div><div style="display:flex;align-items:center;gap:6px;padding:8px 0;border-bottom:1px solid #F9FAFB;flex-wrap:wrap;font-size:12px">
+        <span style="width:20px;color:#6B7280;font-weight:600;flex-shrink:0">화</span>
+        <span style="font-weight:600;color:#16A34A;flex-shrink:0">O</span>
+        <span style="color:#D97706;flex-shrink:0">★★★★☆</span>
+        <span style="color:#6B7280">정규:<strong style="color:#DC2626">안함</strong></span>
+        <span style="color:#6B7280">자립:<strong style="color:#DC2626">안함</strong></span>
+      </div><div style="display:flex;align-items:center;gap:6px;padding:8px 0;border-bottom:1px solid #F9FAFB;flex-wrap:wrap;font-size:12px">
+        <span style="width:20px;color:#6B7280;font-weight:600;flex-shrink:0">수</span>
+        <span style="font-weight:600;color:#16A34A;flex-shrink:0">O</span>
+        <span style="color:#D97706;flex-shrink:0">★★★★☆</span>
+        <span style="color:#6B7280">정규:<strong style="color:#DC2626">안함</strong></span>
+        <span style="color:#6B7280">자립:<strong style="color:#DC2626">안함</strong></span>
+      </div><div style="display:flex;align-items:center;gap:6px;padding:8px 0;border-bottom:1px solid #F9FAFB;flex-wrap:wrap;font-size:12px">
+        <span style="width:20px;color:#6B7280;font-weight:600;flex-shrink:0">목</span>
+        <span style="font-weight:600;color:#16A34A;flex-shrink:0">O</span>
+        <span style="color:#D97706;flex-shrink:0">★★★★☆</span>
+        <span style="color:#6B7280">정규:<strong style="color:#DC2626">안함</strong></span>
+        <span style="color:#6B7280">자립:<strong style="color:#DC2626">안함</strong></span>
+      </div><div style="display:flex;align-items:center;gap:6px;padding:8px 0;border-bottom:1px solid #F9FAFB;flex-wrap:wrap;font-size:12px">
+        <span style="width:20px;color:#6B7280;font-weight:600;flex-shrink:0">금</span>
+        <span style="font-weight:600;color:#16A34A;flex-shrink:0">O</span>
+        <span style="color:#D97706;flex-shrink:0">★★★★☆</span>
+        <span style="color:#6B7280">정규:<strong style="color:#DC2626">안함</strong></span>
+        <span style="color:#6B7280">자립:<strong style="color:#DC2626">안함</strong></span>
+      </div>
+        <div style="display:flex;gap:14px;padding-top:8px;margin-top:4px;border-top:1px solid #F3F4F6;font-size:11px;flex-wrap:wrap">
+          <span style="color:#6B7280">주간 태도 <strong style="color:#D97706">★ 4</strong></span>
+          <span style="color:#6B7280">정규과제 <strong style="color:#D97706">0/5일 완료</strong></span>
+          <span style="color:#6B7280">자립과제 <strong style="color:#D97706">0/5일 완료</strong></span>
+        </div>
+      </div>
+    </div>
+  <div style="text-align:center;margin-top:24px;font-size:11px;color:#9CA3AF">더올릿영어학원 · 학습 보고서 시스템</div>
+</div>
+<div class="toast" id="toast">링크가 복사되었습니다</div>
+<script>function copyLink(){const url='https://thealliteng.github.io/reports/%EC%A0%95%EB%8F%84%EC%9C%A4_2026-05-18_주간.html';navigator.clipboard.writeText(url).then(()=>{const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000);});}</script>
+</body></html>
