@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>더올릿영어 | 정도윤 2026-05-22 일간 보고서</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#F8FAFC;color:#1F2937;font-size:14px;line-height:1.6}
+.hdr{background:linear-gradient(135deg,#1E3A8A,#1D4ED8);color:#fff;padding:20px 18px 16px}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:6px;padding:3px 10px;font-size:11px}
+.tag-w{background:rgba(255,255,255,0.22);font-weight:700}
+.hdr-name{font-size:22px;font-weight:800}
+.hdr-name span{font-size:13px;font-weight:400;opacity:.7;margin-left:7px}
+.hdr-date{font-size:11px;opacity:.5;margin-top:3px}
+.wrap{max-width:600px;margin:0 auto;padding:16px 14px 40px}
+.sec{margin-bottom:16px}
+.sec-t{font-size:10px;font-weight:700;color:#9CA3AF;letter-spacing:.9px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.sec-t::after{content:'';flex:1;height:1px;background:#E5E7EB}
+.card{background:#fff;border-radius:12px;border:1px solid #E5E7EB;padding:16px 18px}
+.row{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid #F3F4F6}
+.row:last-child{border-bottom:none}
+.rl{font-size:13px;color:#6B7280}
+.rv{font-size:13px;font-weight:600;color:#1F2937}
+
+.lesson-box{background:linear-gradient(135deg,#F0F9FF,#EFF6FF);border:1px solid #BFDBFE;border-radius:12px;padding:16px 18px}
+.lesson-text{font-size:13px;line-height:1.85;color:#1E3A8A}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1F2937;color:#fff;padding:9px 18px;border-radius:20px;font-size:12px;font-weight:600;opacity:0;transition:opacity .25s;z-index:200;pointer-events:none}
+.toast.show{opacity:1}
+.copy-btn{display:flex;align-items:center;gap:6px;background:#F9FAFB;color:#374151;border:1px solid #E5E7EB;border-radius:9px;padding:8px 13px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="hdr-top">
+    <div style="display:flex;gap:7px;flex-wrap:wrap">
+      <span class="tag">더올릿영어학원</span>
+      <span class="tag tag-w">📅 일간 보고서</span>
+      <span class="tag">고1 C반</span>
+    </div>
+    <button class="copy-btn" onclick="copyLink()">🔗 링크 복사</button>
+  </div>
+  <div class="hdr-name">정도윤<span>고1</span></div>
+  <div class="hdr-date">2026년 5월 22일 금요일</div>
+</div>
+
+<div class="wrap">
+  <div class="sec">
+    <div class="sec-t">📚 오늘 학습내용</div>
+    <div class="lesson-box"><div class="lesson-text">수능특강18</div></div>
+  </div>
+  <div class="sec">
+    <div class="sec-t">📋 오늘의 기록</div>
+    <div class="card">
+      <div class="row"><span class="rl">출석</span><span class="rv" style="color:#16A34A">✅ 출석</span></div>
+      <div class="row">
+        <span class="rl">단어</span>
+        <span class="rv" style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end">
+          <span style="color:#9CA3AF;font-size:12px">미응시</span>
+        </span>
+      </div>
+      
+      <div class="row"><span class="rl">학습 태도</span><span class="rv">★★★★☆</span></div>
+      <div class="row"><span class="rl">정규과제</span><span class="rv" style="color:#DC2626">❌ 안함</span></div>
+      <div class="row"><span class="rl">자립과제</span><span class="rv" style="color:#DC2626">❌ 안함</span></div>
+      
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:24px;font-size:11px;color:#9CA3AF">더올릿영어학원 · 학습 보고서 시스템</div>
+</div>
+<div class="toast" id="toast">링크가 복사되었습니다</div>
+<script>
+function copyLink(){
+  const url='https://thealliteng.github.io/reports/%EC%A0%95%EB%8F%84%EC%9C%A4_2026-05-22_일간.html';
+  navigator.clipboard.writeText(url).then(()=>{
+    const t=document.getElementById('toast');t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'),2000);
+  });
+}
+</script>
+</body></html>
