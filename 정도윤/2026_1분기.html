@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="theme-color" content="#1E3A8A">
+<title>더올릿영어 | 정도윤 2026년 1분기 보고서</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#F8FAFC;color:#1F2937;font-size:14px;line-height:1.6}
+.hdr{background:linear-gradient(135deg,#1E3A8A,#1D4ED8);color:#fff;padding:20px 18px 16px;position:relative;overflow:hidden}
+.hdr::before{content:'';position:absolute;bottom:-50px;right:-30px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,0.05)}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.tag{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:6px;padding:3px 10px;font-size:11px}
+.tag-w{background:rgba(255,255,255,0.22);font-weight:700}
+.hdr-name{font-size:22px;font-weight:800;letter-spacing:-.5px}
+.hdr-name span{font-size:13px;font-weight:400;opacity:.7;margin-left:7px}
+.hdr-date{font-size:11px;opacity:.5;margin-top:3px}
+.kk-btn{display:flex;align-items:center;gap:6px;background:#FEE500;color:#191919;border:none;border-radius:9px;padding:8px 13px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-bottom:1px solid #E5E7EB}
+.ss{text-align:center;padding:13px 6px}.ss:not(:last-child){border-right:1px solid #E5E7EB}
+.sv{font-size:20px;font-weight:800;display:block;letter-spacing:-.5px}.sl{font-size:10px;color:#9CA3AF;font-weight:600;margin-top:2px}
+.sv.hi{color:#16A34A}.sv.md{color:#2563EB}.sv.lo{color:#DC2626}.sv.na{color:#9CA3AF}
+.wrap{max-width:680px;margin:0 auto;padding:14px 14px 40px}
+.sec{margin-bottom:16px}
+.sec-t{font-size:10px;font-weight:700;color:#9CA3AF;letter-spacing:.9px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.sec-t::after{content:'';flex:1;height:1px;background:#E5E7EB}
+.card{background:#fff;border-radius:12px;border:1px solid #E5E7EB;padding:16px 18px}
+.b{display:inline-flex;align-items:center;gap:2px;padding:2px 6px;border-radius:4px;font-size:11px;font-weight:600}
+.b em{font-style:normal;font-weight:400;opacity:.7;font-size:10px;margin-left:1px}
+.b.hi{background:#DCFCE7;color:#16A34A}.b.md{background:#DBEAFE;color:#2563EB}
+.b.lo{background:#FEE2E2;color:#DC2626}.b.na{background:#F3F4F6;color:#6B7280}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tl-mhd{font-size:13px;font-weight:700;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid}
+.tl-row{display:flex;gap:8px;margin-bottom:7px;align-items:flex-start;font-size:12.5px}
+.tl-dot{width:7px;height:7px;border-radius:50%;margin-top:5px;flex-shrink:0}
+.tl-w{font-size:9px;font-weight:700;color:#9CA3AF;margin-right:3px}
+.ch{position:relative;height:210px}
+.hm{display:flex;gap:5px;overflow-x:auto;padding-bottom:6px}
+.hmc{display:flex;flex-direction:column;gap:3px;align-items:center;flex-shrink:0}
+.hmw{font-size:9px;color:#9CA3AF;white-space:nowrap;font-weight:600;margin-bottom:2px}
+.hmcell{width:24px;height:24px;border-radius:4px;cursor:default}
+.hmcell.hi{background:#DCFCE7;border:1.5px solid #16A34A}
+.hmcell.md{background:#DBEAFE;border:1.5px solid #2563EB}
+.hmcell.lo{background:#FEE2E2;border:1.5px solid #DC2626}
+.hmcell.na{background:#F3F4F6;border:1.5px solid #D1D5DB}
+.legend{display:flex;gap:12px;margin-top:8px;font-size:10px;color:#6B7280;flex-wrap:wrap}
+.ldot{width:9px;height:9px;border-radius:2px;display:inline-block;margin-right:3px;vertical-align:middle}
+.mg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mb{border-radius:10px;overflow:hidden;border:1px solid #E5E7EB}
+.mbt{font-size:12px;font-weight:700;padding:7px 12px}
+.wr{padding:6px 12px;background:#fff;border-bottom:1px solid #F3F4F6;font-size:12px}
+.wr:last-child{border-bottom:none}
+.wrw{font-size:9px;font-weight:700;color:#9CA3AF;margin-bottom:4px}
+.summary-card{background:linear-gradient(135deg,#F0F9FF,#EFF6FF);border:1px solid #BFDBFE;border-radius:12px;padding:18px;position:relative;overflow:hidden}
+.summary-card::before{content:'"';position:absolute;top:-8px;left:12px;font-size:60px;color:#BFDBFE;font-family:serif;line-height:1;pointer-events:none}
+.summary-card.editing{border-color:#3B82F6;box-shadow:0 0 0 3px rgba(59,130,246,0.12)}
+.sv-text{font-size:13px;line-height:1.85;color:#1E3A8A;padding-left:2px;position:relative;z-index:1;cursor:text;min-height:50px;white-space:pre-wrap}
+.sv-edit{width:100%;font-size:13px;line-height:1.85;color:#1E3A8A;background:transparent;border:none;outline:none;resize:none;padding-left:2px;z-index:1;font-family:inherit;min-height:70px;display:none;position:relative}
+.sv-sign{margin-top:12px;font-size:11px;color:#60A5FA;text-align:right;font-weight:600}
+.edit-hint{font-size:11px;color:#9CA3AF;margin-top:6px;display:flex;align-items:center;gap:4px}
+.action-bar{display:none;gap:8px;margin-top:8px;align-items:center;justify-content:flex-end}
+.btn{padding:6px 14px;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;border:none}
+.btn-save{background:#1E3A8A;color:#fff}.btn-cancel{background:#F3F4F6;color:#6B7280}
+.saved-msg{font-size:11px;color:#10B981;font-weight:600;opacity:0;transition:opacity .3s;margin-right:auto}
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#1F2937;color:#fff;padding:9px 18px;border-radius:20px;font-size:12px;font-weight:600;opacity:0;transition:opacity .25s;z-index:200;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1}
+@media(max-width:600px){.tl,.mg{grid-template-columns:1fr}.strip{grid-template-columns:repeat(3,1fr)}.sv{font-size:16px}}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="hdr-top">
+    <div style="display:flex;gap:7px;flex-wrap:wrap">
+      <span class="tag">더올릿영어학원</span>
+      <span class="tag tag-w">📋 2026년 1분기</span>
+      <span class="tag">고1 C반</span>
+    </div>
+    <button class="kk-btn" onclick="copyLink()">🔗 링크 복사</button>
+  </div>
+  <div class="hdr-name">정도윤<span>고1</span></div>
+  <div class="hdr-date">2026년 1월 — 3월 학습 보고서</div>
+</div>
+
+<div class="strip">
+  <div class="ss"><span class="sv na">-</span><span class="sl">주간TEST 평균</span></div>
+  <div class="ss"><span class="sv na">-</span><span class="sl">최고 점수</span></div>
+  <div class="ss"><span class="sv na">-</span><span class="sl">최저 점수</span></div>
+  <div class="ss"><span class="sv na">-</span><span class="sl">단어TEST 평균</span></div>
+  
+</div>
+
+<div class="wrap">
+
+  <div class="sec"><div class="sec-t">📚 학습 내용</div><div class="card"><div class="tl"><div><div class="tl-mhd" style="color:#3B82F6;border-color:#3B82F6">1월</div><div style="font-size:12px;color:#9CA3AF">기록 없음</div></div><div><div class="tl-mhd" style="color:#10B981;border-color:#10B981">2월</div><div style="font-size:12px;color:#9CA3AF">기록 없음</div></div><div><div class="tl-mhd" style="color:#F59E0B;border-color:#F59E0B">3월</div><div style="font-size:12px;color:#9CA3AF">기록 없음</div></div></div></div></div>
+
+  
+
+  
+
+  <div class="sec"><div class="sec-t">📋 단어 · 듣기 상세</div><div class="mg"><div class="mb"><div class="mbt" style="background:#EFF6FF;color:#3B82F6">1월</div><div class="wr" style="color:#9CA3AF;font-size:12px">기록 없음</div></div><div class="mb"><div class="mbt" style="background:#ECFDF5;color:#10B981">2월</div><div class="wr" style="color:#9CA3AF;font-size:12px">기록 없음</div></div><div class="mb"><div class="mbt" style="background:#FFFBEB;color:#F59E0B">3월</div><div class="wr" style="color:#9CA3AF;font-size:12px">기록 없음</div></div></div></div>
+
+  <div class="sec">
+    <div class="sec-t">💬 선생님 코멘트</div>
+    <div>
+      <div class="summary-card" id="sc_" onclick="startEdit()">
+        <div class="sv-text" id="sv_">안녕하세요! 더올릿영어학원입니다.
+정도윤 학생의 2026년 1분기 학습 보고서입니다.
+
+이번 분기도 잘 따라와 주어서 감사합니다.
+
+학습과 관련하여 궁금하신 점은 언제든 연락주세요.
+감사합니다.</div>
+        <textarea class="sv-edit" id="se_"></textarea>
+        <div class="sv-sign">— 더올릿영어학원</div>
+      </div>
+      <div class="edit-hint" id="eh_">
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M11.5 2.5l2 2-8 8H3.5v-2l8-8z" stroke="#9CA3AF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        코멘트를 클릭하면 수정할 수 있습니다
+      </div>
+      <div class="action-bar" id="ab_">
+        <span class="saved-msg" id="sm_">✓ 저장됨</span>
+        <button class="btn btn-cancel" onclick="cancelEdit()">취소</button>
+        <button class="btn btn-save" onclick="saveEdit()">저장</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:24px;font-size:11px;color:#9CA3AF">더올릿영어학원 · 학습 보고서 시스템</div>
+</div>
+<div class="toast" id="toast">링크가 복사되었습니다</div>
+<script>
+const STORAGE_KEY='qr_comment_5_2026_1';
+const saved=localStorage.getItem(STORAGE_KEY);
+if(saved){const el=document.getElementById('sv_');if(el)el.textContent=saved;}
+function startEdit(){
+  const sc=document.getElementById('sc_'),sv=document.getElementById('sv_'),se=document.getElementById('se_'),ab=document.getElementById('ab_'),eh=document.getElementById('eh_');
+  if(se.style.display==='block') return;
+  se.value=sv.textContent;sv.style.display='none';se.style.display='block';
+  sc.classList.add('editing');ab.style.display='flex';if(eh)eh.style.display='none';se.focus();
+}
+function saveEdit(){
+  const sv=document.getElementById('sv_'),se=document.getElementById('se_'),sc=document.getElementById('sc_'),ab=document.getElementById('ab_'),sm=document.getElementById('sm_'),eh=document.getElementById('eh_');
+  sv.textContent=se.value;se.style.display='none';sv.style.display='block';
+  sc.classList.remove('editing');ab.style.display='none';if(eh)eh.style.display='flex';
+  localStorage.setItem(STORAGE_KEY,se.value);
+  sm.style.opacity='1';setTimeout(()=>sm.style.opacity='0',2000);
+}
+function cancelEdit(){
+  const sv=document.getElementById('sv_'),se=document.getElementById('se_'),sc=document.getElementById('sc_'),ab=document.getElementById('ab_'),eh=document.getElementById('eh_');
+  se.style.display='none';sv.style.display='block';sc.classList.remove('editing');ab.style.display='none';if(eh)eh.style.display='flex';
+}
+function copyLink(){
+  navigator.clipboard.writeText('https://thealliteng.github.io/reports/%EC%A0%95%EB%8F%84%EC%9C%A4_2026_1분기.html').then(()=>{
+    const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000);
+  });
+}
+
+</script>
+</body></html>
